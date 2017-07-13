@@ -206,7 +206,7 @@ class Category extends React.Component {
                 </Text>
                 <View style={[styles.header,this.state.typeIds.length===0?{display:'none'}:{},{justifyContent: 'space-between',flexDirection: 'row'}]}>
                     <Text style={[styles.cateTitleText]}>
-                        My Categories
+                        我的
                     </Text>
                     <Icon.Button
                         style={{padding:0,paddingTop:2}}
@@ -231,7 +231,7 @@ class Category extends React.Component {
                 </GridView>
                 <View style={styles.header}>
                     <Text style={[styles.cateTitleText]}>
-                        All Categories
+                        所有分类
                     </Text>
                 </View>
                 <GridView

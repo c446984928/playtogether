@@ -26,7 +26,7 @@ import * as api from '../helper/api';
 export function* requestTypeList() {
     try {
         yield put(fetchTypeList());
-        const typeList = yield call(api.getCategory);
+        const typeList = yield call(api.getType);
         yield put(receiveTypeList(typeList));
         yield call(store.save, 'typeList', typeList);
 

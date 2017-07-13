@@ -20,7 +20,7 @@ export default DrawerContainer = DrawerNavigator(
                     <View style={styles.item}>
                         <Image style={styles.itemImg}
                                source={require('../img/icon/home.png')}/>
-                        <Text style={styles.itemText}>Home</Text>
+                        <Text style={styles.itemText}>首页</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -32,7 +32,7 @@ export default DrawerContainer = DrawerNavigator(
                     <View style={styles.item}>
                         <Image style={styles.itemImg}
                                source={require('../img/icon/category.png')}/>
-                        <Text style={styles.itemText}>Category</Text>
+                        <Text style={styles.itemText}>分类</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -44,7 +44,7 @@ export default DrawerContainer = DrawerNavigator(
                     <View style={styles.item}>
                         <Image style={styles.itemImg}
                                source={require('../img/icon/feedback.png')}/>
-                        <Text style={styles.itemText}>Feedback</Text>
+                        <Text style={styles.itemText}>反馈</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -53,11 +53,11 @@ export default DrawerContainer = DrawerNavigator(
                         props.navigation.navigate('DrawerClose');
                         //todo change to a real download site
                         Share.share({
-                            message: '[Recommend a wonderful security App: Security Headlines] https://play.google.com/store/apps/details?id=com.skyaid.securityheadlines',
+                            message: '[推荐一个浏览活动的App] ',
                             url: 'https://play.google.com/store/apps/details?id=com.skyaid.securityheadlines',
-                            title: 'Security Headlines'
+                            title: '快乐周末'
                         }, {
-                            dialogTitle: 'Share Security Headlines',
+                            dialogTitle: '快乐周末',
                             tintColor: 'green'
                         }).then(() => {return null})
                             .catch((error) => ToastUtil.showShort("Share error "+error.message));
@@ -65,7 +65,7 @@ export default DrawerContainer = DrawerNavigator(
                     <View style={[styles.item,(Platform.OS === 'ios')?{display:'none'}:{}]}>
                         <Image style={styles.itemImg}
                                source={require('../img/icon/share.png')}/>
-                        <Text style={styles.itemText}>Share</Text>
+                        <Text style={styles.itemText}>分享</Text>
                     </View>
                 </TouchableOpacity>
 

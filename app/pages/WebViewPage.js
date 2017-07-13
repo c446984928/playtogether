@@ -222,7 +222,7 @@ class WebViewPage extends React.Component {
                         this.webview = ref;
                     }}
                     style={styles.base}
-                    source={{uri: params.article.url}}
+                    source={{uri: params.article.adapt_url}}
                     javaScriptEnabled
                     domStorageEnabled
                     startInLoadingState={false}

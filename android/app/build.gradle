@@ -95,7 +95,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.skyaid.securityheadlines"
+        applicationId "com.llccc.playtogether"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 6

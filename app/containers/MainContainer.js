@@ -24,7 +24,7 @@ import * as readCreators from '../actions/read';
 
 class MainContainer extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        title: 'Home',
+        title: '首页',
         drawerIcon:({tintColor}) => (
             <Icon name="md-home" size={25} color={tintColor}/>
         ),

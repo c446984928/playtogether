@@ -171,7 +171,7 @@ class Main extends React.Component {
                 <View style={styles.footerContainer}>
                     <ActivityIndicator size="small" color="#3e9ce9"/>
                     <Text style={styles.footerText}>
-                        Loading...
+                        加载中...
                     </Text>
                 </View>
             );
@@ -184,16 +184,19 @@ class Main extends React.Component {
             <TouchableOpacity onPress={() => this.onPress(article)}>
                 <View style={styles.containerItem}>
                     <Image style={styles.itemImg}
-                           source={article.contentImg ? {uri: article.contentImg} : require('../img/news_default_image.png')}/>
+                           source={article.image ? {uri: article.image} : require('../img/news_default_image.png')}/>
                     <View style={styles.itemRightContent}>
                         <Text style={styles.title} numberOfLines={2}>
                             {formatStringWithHtml(article.title.trim())}
                         </Text>
                         <View style={styles.itemRightBottom}>
                             <Text style={styles.userName}>
-                                {article.userName}
+                                {article.fee_str}
                             </Text>
-                            <TimeAgo style={styles.timeAgo} time={article.date} hideAgo={true}/>
+                            <Text style={styles.timeAgo}>
+                                {article.time_str}
+                            </Text>
+                            {/*<TimeAgo style={styles.timeAgo} time={article.date} hideAgo={true}/>*/}
                         </View>
                     </View>
                 </View>
@@ -221,7 +224,7 @@ class Main extends React.Component {
                             style={styles.refreshControlBase}
                             refreshing={read.isRefreshing}
                             onRefresh={() => this.onRefresh(typeId)}
-                            title="Loading..."
+                            title="加载中..."
                             colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
                         />
                     }
@@ -249,7 +252,7 @@ class Main extends React.Component {
                         style={styles.refreshControlBase}
                         refreshing={read.isRefreshing}
                         onRefresh={() => this.onRefresh(typeId)}
-                        title="Loading..."
+                        title="加载中..."
                         colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
                     />
                 }
@@ -289,7 +292,7 @@ class Main extends React.Component {
                                     this.state.dataSource.cloneWithRows(
                                         read.articleList[typeId] === undefined
                                             ? []
-                                            : read.articleList[typeId]
+                                            : read.articleList[typeId].events
                                     ),
                                     typeId
                                 )}
@@ -318,7 +321,7 @@ class Main extends React.Component {
                         this.props.navigation.navigate('DrawerOpen')
                     }}
                 />
-                <Text style={styles.headerTitle}>Security Headlines</Text>
+                <Text style={styles.headerTitle}>快乐周末</Text>
                 <Icon.Button
                     name="md-search"
                     style={{}}

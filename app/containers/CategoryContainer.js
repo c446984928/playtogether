@@ -26,7 +26,7 @@ import Category from '../pages/Category';
 class CategoryContainer extends React.Component {
     static navigationOptions = ({navigation}) => {
         let option = {
-            title: 'Category',
+            title: '分类',
             drawerIcon: ({tintColor}) => (
                 <Icon name="md-pricetags" size={25} color={tintColor}/>
             )
