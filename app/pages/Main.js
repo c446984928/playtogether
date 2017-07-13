@@ -232,7 +232,7 @@ class Main extends React.Component {
                     <View style={{alignItems: 'center'}}>
                         <Image style={{width:70,height:70,opacity:0.3}} source={require('../img/Oops.png')}/>
                         <Text style={{fontSize: 16,opacity:0.5}}>
-                            Found Nothing
+                            Loading...
                         </Text>
                     </View>
                 </ScrollView>
