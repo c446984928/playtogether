@@ -109,9 +109,9 @@ class Category extends React.Component {
 
     }
 
-    componentWillUnmount(){
-        DeviceEventEmitter.emit('refreshCategory');
-    }
+    // componentWillUnmount(){
+    //     DeviceEventEmitter.emit('refreshCategory');
+    // }
 
     onRefresh() {
         const {categoryActions} = this.props;
@@ -129,6 +129,7 @@ class Category extends React.Component {
         });
         store.save('typeIds', typeIds);
         DeviceEventEmitter.emit('changeCategory', typeIds);
+        DeviceEventEmitter.emit('refreshCategory', type.id);
     }
 
     onPressChoosedItem(type) {

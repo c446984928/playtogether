@@ -99,11 +99,9 @@ class Main extends React.Component {
         DeviceEventEmitter.addListener('gotoCategory', (index) => {
             this.tabView.goToPage(index)
         });
-        DeviceEventEmitter.addListener('refreshCategory', () => {
-            this.state.typeIds.forEach((typeId) => {
-                readActions.requestArticleList(false, true, typeId);
-                pages.push(1);
-            });
+        DeviceEventEmitter.addListener('refreshCategory', (typeId) => {
+            readActions.requestArticleList(false, true, typeId);
+            pages.push(1);
         });
 
 
@@ -277,6 +275,12 @@ class Main extends React.Component {
                     tabBarUnderlineStyle={styles.tabBarUnderline}
                     tabBarActiveTextColor="#11acba"
                     tabBarInactiveTextColor="#aaaaaa"
+                    onChangeTab={({i,ref}) => {
+                        let typeId = this.state.typeIds[i]||this.state.typeIds[0];
+                        if (!read.articleList[typeId] || read.articleList[typeId].length === 0){
+
+                        }
+                    }}
                 >
                     {this.state.typeIds.map((typeId) => {
                         let name = '';
