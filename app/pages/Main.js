@@ -81,10 +81,14 @@ class Main extends React.Component {
                     });
                 }
             );
-            typeIds.forEach((typeId) => {
-                readActions.requestArticleList(false, true, typeId);
-                pages.push(1);
-            });
+
+            readActions.requestArticleList(false, true, typeIds[0]||1);
+            pages.push(1);
+
+            // typeIds.forEach((typeId) => {
+            //     readActions.requestArticleList(false, true, typeId);
+            //     pages.push(1);
+            // });
         });
     }
 
@@ -278,7 +282,7 @@ class Main extends React.Component {
                     onChangeTab={({i,ref}) => {
                         let typeId = this.state.typeIds[i]||this.state.typeIds[0];
                         if (!read.articleList[typeId] || read.articleList[typeId].length === 0){
-
+                            DeviceEventEmitter.emit('refreshCategory', typeId);
                         }
                     }}
                 >
