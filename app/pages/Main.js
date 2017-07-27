@@ -91,10 +91,6 @@ class Main extends React.Component {
     componentDidMount() {
         const {readActions} = this.props;
         DeviceEventEmitter.addListener('changeCategory', (typeIds) => {
-            typeIds.forEach((typeId) => {
-                readActions.requestArticleList(false, true, typeId);
-                pages.push(1);
-            });
             this.setState({
                 typeIds
             });
@@ -103,6 +99,13 @@ class Main extends React.Component {
         DeviceEventEmitter.addListener('gotoCategory', (index) => {
             this.tabView.goToPage(index)
         });
+        DeviceEventEmitter.addListener('refreshCategory', () => {
+            this.state.typeIds.forEach((typeId) => {
+                readActions.requestArticleList(false, true, typeId);
+                pages.push(1);
+            });
+        });
+
 
 
         // InteractionManager.runAfterInteractions(() => {

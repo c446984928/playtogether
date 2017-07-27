@@ -90,18 +90,27 @@ class Category extends React.Component {
             if (!typeIds || typeIds.length === 0){
                 typeIds = []
             }
+
+            let hasNewFlag = false;
             for (let id of specialCategoryIds){
                 if (typeIds.indexOf(id) === -1){
                     typeIds.push(id);
+                    hasNewFlag = true;
                 }
             }
-            this.setState({
-                typeIds: typeIds.sort()
-            });
-            store.save('typeIds', typeIds);
-            DeviceEventEmitter.emit('changeCategory', typeIds);
+            if (hasNewFlag){
+                this.setState({
+                    typeIds: typeIds.sort()
+                });
+                store.save('typeIds', typeIds);
+                DeviceEventEmitter.emit('changeCategory', typeIds);
+            }
         });
 
+    }
+
+    componentWillUnmount(){
+        DeviceEventEmitter.emit('refreshCategory');
     }
 
     onRefresh() {
