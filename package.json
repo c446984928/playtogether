@@ -1,11 +1,11 @@
 {
-  "name": "reading",
-  "version": "2.1.0",
-  "description": "iReading App Write In React-Native",
+  "name": "play-together",
+  "version": "1.0.0",
+  "description": "city activity",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:attentiveness/reading.git"
+    "url": "git@github.com:c446984928/playtogether.git"
   },
   "engines": {
     "node": ">=4"
