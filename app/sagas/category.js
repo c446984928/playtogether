@@ -22,6 +22,7 @@ import * as types from '../constants/ActionTypes';
 import ToastUtil from '../utils/ToastUtil';
 import {fetchTypeList, receiveTypeList} from '../actions/category';
 import * as api from '../helper/api';
+import localTypeList from '../constants/typelist'
 
 export function* requestTypeList() {
     try {
@@ -31,8 +32,8 @@ export function* requestTypeList() {
         yield call(store.save, 'typeList', typeList);
 
     } catch (error) {
-        yield put(receiveTypeList([]));
-        yield ToastUtil.showShort('Connect Error,please check your network and refresh...');
+        yield put(receiveTypeList(localTypeList));
+        // yield ToastUtil.showShort('Connect Error,please check your network and refresh...');
     }
 }
 

@@ -212,7 +212,7 @@ class Category extends React.Component {
                 }
             >
                 <Text style={[ styles.btnText, isFirst?{}:{display:'none'}, {color: 'black', padding: 5, fontSize: 18}]}>
-                    Welcome! Choose your categories
+                    欢迎！选几个感兴趣的分类吧
                 </Text>
                 <View style={[styles.header,this.state.typeIds.length===0?{display:'none'}:{},{justifyContent: 'space-between',flexDirection: 'row'}]}>
                     <Text style={[styles.cateTitleText]}>
@@ -255,7 +255,7 @@ class Category extends React.Component {
                 <Button
                     containerStyle={[isFirst?{}:{display:'none'},styles.sureBtn]}
                     style={styles.btnText}
-                    text={'OK'}
+                    text={'确定'}
                     onPress={() => {
                         if (this.state.typeIds.length === 0){
                             return ToastUtil.showShort('Please choose at least 1 category');

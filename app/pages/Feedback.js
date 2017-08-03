@@ -28,7 +28,7 @@ let feedbackText;
 class Feedback extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: '反馈',
-      drawerIcon: ({ tintColor }) => (
+    drawerIcon: ({ tintColor }) => (
       <Icon name="md-thumbs-up" size={25} color={tintColor} />
     ),
     headerRight: (

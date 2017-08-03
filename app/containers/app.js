@@ -9,6 +9,7 @@ import SearchResult from '../pages/SearchResult';
 import * as React from "react";
 import DrawerContainer from "./DrawerContainer";
 import {StatusBar, View} from "react-native";
+import City from '../pages/City';
 
 
 const AppContent = StackNavigator(
@@ -25,6 +26,7 @@ const AppContent = StackNavigator(
         Search: {screen: Search},
         SearchResult: {screen: SearchResult},
         Feedback: { screen: Feedback },
+        City: {screen: City},
         About: {screen: About}
     },
     {

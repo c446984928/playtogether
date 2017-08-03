@@ -316,17 +316,18 @@ class Main extends React.Component {
                     }}
                 />
                 <Text style={styles.headerTitle}>快乐周末</Text>
-                {/*<Icon.Button*/}
-                    {/*name="md-search"*/}
-                    {/*style={{}}*/}
-                    {/*backgroundColor="transparent"*/}
-                    {/*underlayColor="transparent"*/}
-                    {/*size={30}*/}
-                    {/*// activeOpacity={0.8}*/}
-                    {/*onPress={() => {*/}
-                        {/*this.props.navigation.navigate('Search')*/}
-                    {/*}}*/}
-                {/*/>*/}
+                <Icon.Button
+                    name="md-search"
+                    style={{}}
+                    backgroundColor="transparent"
+                    underlayColor="transparent"
+                    size={30}
+                    // activeOpacity={0.8}
+                    onPress={() => {
+                        ToastUtil.showShort('正在开发呢！客官稍后 :-）')
+                        // this.props.navigation.navigate('Search')
+                    }}
+                />
             </View>
         )
     }
